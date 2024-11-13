@@ -1,0 +1,342 @@
+                                                Module-3
+
+React
+-----
+-it is a open-source web application library
+
+-developed and maintained by META.
+
+Features of React 
+-----------------
+-Used to create UI(frontend)
+
+-Used to create single  page applications - Only one page loads/render in the browser - index.html
+
+-It is a declarative application -it will not accept real DOM. DOM-to give behaviour to js eg;doc.getElementById etc..
+
+-Virtual DOM
+------------
+-Copy of real DOM -created by React
+
+Diffing - Process of comparing real DOM and virtual DOM
+
+Reconcilation - updating only the node which have undergone changes
+
+-Reduces the loading time/entire application wont be reloaded for each updates - website optimisation
+
+-Pure Function - Functions whose output only depends on argument
+
+-Language - jsx:Javascript XML
+
+-Transpiling - coverstion of jsx into browser understanding language,bebel inbuilt library which is used to convert jsx into browser understanding language
+
+-Data Sharing - unidirectional - parent to child communication only it is done with the help  of predefined objects called props
+
+
+How to create a project
+-----------------------
+1)command : npx(node package executor) create-react-app projectname
+
+files
+-----
+README.md -document of this application
+
+2)Package.json-npm configuration
+
+3)Package.lock.json -installed libraires  version and some important features to run that modules in the application
+
+4)node_modules - contains the copy of the librarires installed in the application 
+
+5)gitignore-files that need to be ignored while pushing into git repository
+
+6)public-contents that are available throughout the appliction
+
+7)app-components - it is the basic unit of 
+ 8) index.css - to provide global styling
+ 9)reportwebvitals.js-to check performance  of the website 
+
+
+components -it is basic unit of UI
+
+features
+-------
+-component name should start with capital letter
+-renaming is not possible
+-extension - js,jsx
+-js codes are placed above return statement 
+-all tags inside a return function should be placed inside a single tag
+
+react fragment - <></>
+
+Styling
+--------
+inline - style='property : value'
+        style={{property:value}}
+        camel case is used eg; fontFamily,backgroundColor etc...
+
+2)external-external file with extension.css,import the css file is js file using import keyword
+
+3)css module
+------------
+-create an external file wit extension as .module.css
+-to style more than one component by storing the data in variabale 
+-to import 
+
+Functions
+----------
+-functions without argument
+-functionname
+eg:add()
+
+-function with argument
+        -callback
+        eg:()=>{add(arg1)}
+
+
+Object Destructuring
+--------------------
+accessing particular keys from an object
+syntax-{key,...}
+
+
+Types of components
+--------------------
+1)Functional rcc.rfc
+
+
+2)Class className{
+     //js code
+     render()
+     return
+     div   
+}
+
+state
+------
+-State is an object which stores properties of a react class component{key:value}
+
+-when the state change its value the entire component re render
+
+-setState() - is the function to change the value of state
+
+
+life cycle of class component
+------------------------------
+1)Mounting phase - component adding to DOM
+
+    -constructor() - it intializes state value
+
+    -getDerivedSateFromProps() - return obj if the component is having any data from parents to update the state ,else return null
+
+    -render()-renders jsx code into browser-returns the components output
+
+    -componentDidMount()-network call(api)
+
+
+2)updating phhase - editing component
+
+   --getDerivedSateFromProps()-return obj if the component is having any data from paraent to update the state ,else return nulll value
+
+   -ShouldComponentUpdate()-returns boolean value true - if there is updation ,else false 
+   -render()-renders jsx code into browser -returns components output
+   getSnapShotBeforeUpdate()-this function invokes right before the update in vdom is reflected in real dom
+   componenetDidUpdate()-after the dom is updated now handle the side effects 
+
+3)unmounting phase - removal of component from dom
+  
+  -componentWillUnmount-it is used to cleanup the component before the component is removed from the dom
+
+4)error handling phase
+----------------------
+1)getDerivedSateFromError() - error UI
+2)componentDidcatch() - return log 
+
+HOOKS
+-----
+Hooks are functions which provides states and life cycle for a functional component in an react application
+
+-Hooks are of two types
+
+1)predefinded Hooks
+
+   -useSate - inorder to create states in functional component 
+   -return - state ,function to change the state
+
+   syntax-const
+
+2)custom hooks - 
+
+Rules to use hooks
+------------------
+-import hooks from react library
+
+- hook calls are called at the top of js the js parents
+
+-we cannot use hooks on conditonal bases
+
+conditional rendering
+----------------------
+ternary operator = { condtion?true : false }
+truthy operator = {condition && true}
+
+react-bootstrap - installation
+-------------------------------
+command : npm install react-botstrap bootstrap
+check the dependencies key in the package.json file
+downloadd theme - bootswatch website
+        -download bootstrap.min.css file
+        -paste the download file inside  src folder
+        -import bootstrap.min.css in main.jsx file
+
+ fontawesome install
+ -------------------
+ command : npm install -- save @fortawesome...
+ fontawesome-svg-core @fortawesome/free-solid-svg-icons
+
+ -paste the code and import the tag and the icon at the top of the component 
+
+ Setting up path in react application
+ ------------------------------------
+ -install react-router-dom -package which help to provode path in react application
+ command : npm i react-router-dom
+
+ -with the help of route tag,which should be placed inside the app.jsx file.
+
+        path attribute - path element => component name (self close tag)
+
+        -route tag only exist inside the route tag(as a child)
+
+        - link tag is used to navigate from one page to another-to attribute is used set path
+
+react bootstrap
+------------------
+container
+
+JSON Server
+-----------
+it is a lightweight and easy to use node js tool that simulates a restful api using JSON file as the data source
+
+-with json server frontend develeopers can create mock api without the need of a complex server-side code , or when a backend api isnt ready yet
+
+how to create json server
+------------------------
+1)create a folder for the server
+
+2)use command - npm init -y inorder to install the package.
+3)install all libraries required to setup the server     
+        -json-server - npm i json-server/npm i json-server@0.17.4
+        -will create - node_modules as well as package.lock.json
+
+
+4)create .gitignore file - inorder to mention the fle name which have to be ignored while pushing the code into git
+
+5)create a file to store data with an extension as .json(content should be in json format)
+
+6)create index.js file-it is the only file that runs at the backend
+        -edit script ey with start command
+
+   -index.js
+   -import json servver library using req keyword
+   -create server using create()func in jsonserver library
+   -set port number for the server to runs
+        -process.env.PORT -access the available port 
+
+
+Axios api
+----------
+Axios is a promise-based HTTP Client for node.js and the browser  
+
+how to set values to contetnt type of headers
+-----------------------------------------------
+-application/json - if the body of the request contains only input data and hosted contetnt
+-mltipart/form data - if the request body contains uploaded contents from the system as wellm
+
+sideeffect : those activites which effects the pure function are called sideeffect eg: api calls in a component -in react side effect are handled by using usestate hook
+        
+        syntax-useEffect(()={
+
+        },dependencies)
+        -activites to be formed while calling effect is given as the first argument
+
+        dependency-when usestate have to be called
+         -three types of dependency-
+         1)no dependency -useeffect will be invoked in each render
+         2)empty array([]) -useeffect is called in the first render 
+         3)state/props-useEffect will be called in the first render and also when the state or props changes its value
+
+
+Different way of sending data using api
+----------------------------------------
+
+1)body parameter
+2)path parameter
+3)Query Parameter
+ 
+Demerits of state lifting
+------------------------
+Data loss due to prop drilling  
+
+-prop drilling occurs when the parent component generate its states and passes it down as props to its child components that does not consume the props instead they only passes it down to its child components
+
+Elongated props
+---------------
+props which are neither created nor consumed by a component
+
+Coupling
+---------
+interdependency of components
+
+Redux
+------
+-Third way of data sharing in react
+
+-its an external library to achieve data sharing in react 
+
+-Components of redux:
+1)store
+2)action
+3)reducer
+
+middlewear
+----------
+
+it is a function which have the ability to break req-res cycle
+
+apart from other functions middlewear must have three arguments
+
+first arg - request
+second arg- response
+third arg-next
+-there are two types of middlewear
+1)application specific middlewear
+2)router specific middlewear
+
+application specific
+-------------------------
+all the request in the application must pass through the middlewear
+
+router specific
+
+-----------------
+
+will be only active in a particular route/path
+
+eg:jwt
+
+Multer
+------
+Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
+
+-Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form.
+
+COntextShare
+-------------
+-for data sharing between components
+-part of react 
+-steps to use context COntextShare
+
+1)create a component
+2)wrapp app inside context component
+3)Create context in the component - createContext()
+4)create the data to share by using this context
+5)using provider tag and children props share the data with other components
